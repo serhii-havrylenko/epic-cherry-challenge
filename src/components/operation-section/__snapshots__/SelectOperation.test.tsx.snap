@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <select>
+    <option
+      disabled=""
+      value="select"
+    >
+      select
+    </option>
+    <option
+      value="constant"
+    >
+      constant
+    </option>
+    <option
+      value="argument"
+    >
+      argument
+    </option>
+    <option
+      value="and"
+    >
+      and
+    </option>
+    <option
+      value="or"
+    >
+      or
+    </option>
+  </select>
+</div>
+`;

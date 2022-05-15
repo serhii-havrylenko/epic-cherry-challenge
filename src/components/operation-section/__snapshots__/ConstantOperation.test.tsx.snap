@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <select>
+    <option
+      value="true"
+    >
+      true
+    </option>
+    <option
+      value="false"
+    >
+      false
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,12 @@
+.Variable {
+  height: 30px;
+}
+
+.Variable-hasError {
+  border: 1px solid red;
+}
+
+.Variable-error {
+  color: red;
+  font-size: 14px;
+}

@@ -22,7 +22,7 @@ function App() {
           <div className="App-operations">
             <OperationsSection />
           </div>
-          <div>
+          <div className="App-result">
             <Result />
           </div>
         </section>

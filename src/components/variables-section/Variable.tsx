@@ -1,3 +1,5 @@
+import './Variable.css';
+
 export const Variable = ({
   onValueChange,
   onNameChange,
@@ -8,13 +10,19 @@ export const Variable = ({
   nameExists?: boolean;
 }) => {
   return (
-    <div>
-      <input placeholder="Variable name" onChange={(e) => onNameChange(e.target.value)} />
-      <select onChange={(e) => onValueChange(e.target.value === 'true')}>
-        <option value="true">true</option>
-        <option value="false">false</option>
-      </select>
-      {nameExists && <strong className="error">* Name already exists</strong>}
-    </div>
+    <>
+      <div className="Variable">
+        <input
+          placeholder="Variable name"
+          className={nameExists ? 'Variable-hasError' : ''}
+          onChange={(e) => onNameChange(e.target.value)}
+        />
+        <select onChange={(e) => onValueChange(e.target.value === 'true')}>
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+      </div>
+      {nameExists && <strong className="Variable-error">* Name already exists</strong>}
+    </>
   );
 };

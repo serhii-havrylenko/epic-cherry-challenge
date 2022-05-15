@@ -10,8 +10,6 @@ export const calculateResult = ({
   operations: Operations;
   nodeId: string;
 }): boolean | undefined => {
-  let value: boolean | undefined;
-
   const operation = operations[nodeId];
 
   if (!operation || operation.type === 'select') {
@@ -19,22 +17,22 @@ export const calculateResult = ({
   }
 
   if (operation.type === 'constant') {
-    value = operation.value;
+    return operation.value;
   } else if (operation.type === 'argument') {
-    value = getVariableById(variables, operation.value)?.value;
-  } else {
-    const children = getOperationChildren(operations, nodeId);
+    return getVariableById(variables, operation.value)?.value;
+  }
 
-    for (const child of children) {
-      value = calculateResult({ variables, operations, nodeId: child.id });
+  let value: boolean | undefined;
+  const children = getOperationChildren(operations, nodeId);
+  for (const child of children) {
+    value = calculateResult({ variables, operations, nodeId: child.id });
 
-      if (operation.type === 'and' && !value) {
-        return value;
-      }
+    if (operation.type === 'and' && !value) {
+      return value;
+    }
 
-      if (operation.type === 'or' && value) {
-        return value;
-      }
+    if (operation.type === 'or' && value) {
+      return value;
     }
   }
 

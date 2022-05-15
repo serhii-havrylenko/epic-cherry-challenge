@@ -23,8 +23,16 @@
 }
 
 .App-operations {
+  margin-top: 100px;
+  margin-left: 20px;
   text-align: left;
   display: flex;
   align-items: left;
   justify-content: left;
+}
+
+.App-result {
+  margin-top: 100px;
+  margin-left: 20px;
+  text-align: left;
 }
