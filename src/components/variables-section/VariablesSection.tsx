@@ -1,11 +1,12 @@
 import { v4 as uuidV4 } from 'uuid';
 
-import { VariableDefinition } from '../../types';
-import { useDispatch } from '../../utils';
+import { getVariables } from '../../selectors';
+import { useDispatch, useSelector } from '../../utils';
 import { Variable } from './Variable';
 
-export const VariablesList = ({ variables }: { variables: VariableDefinition[] }) => {
+export const VariablesList = () => {
   const dispatch = useDispatch();
+  const variables = useSelector(getVariables);
 
   return (
     <div>
